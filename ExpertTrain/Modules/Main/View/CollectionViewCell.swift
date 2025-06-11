@@ -14,29 +14,21 @@ final class CollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .red
         return imageView
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.text = "Description Description Description"
-        return label
-    }()
-    
-    private let colorLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.text = "red"
+        label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.numberOfLines = 2
+        label.text = "Description"
         return label
     }()
     
     private let likesCountLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.font = .systemFont(ofSize: 12, weight: .bold)
         label.text = "30 likes"
         label.textAlignment = .right
         return label
@@ -51,12 +43,7 @@ final class CollectionViewCell: UICollectionViewCell {
     private let labelsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        return stackView
-    }()
-    
-    private let bottomLabelsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.spacing = 8.0
         return stackView
     }()
     
@@ -70,17 +57,30 @@ final class CollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
+    // MARK: - Configure
+    
+    func configure(_ photo: MainModel) {
+        imageView.imageFrom(urlString: photo.urls.thumb)
+        descriptionLabel.text = photo.displayDescription
+        descriptionLabel.textColor = UIColor(hex: photo.color)
+        likesCountLabel.text = "\(photo.likes) 👍"
+    }
+    
     // MARK: - Private methods
     
     private func setupUI() {
-        backgroundColor = .blue
+        backgroundColor = .systemBackground
         
-        bottomLabelsStackView.addArrangedSubviews(colorLabel, likesCountLabel)
-        labelsStackView.addArrangedSubviews(descriptionLabel, bottomLabelsStackView)
+        labelsStackView.addArrangedSubviews(descriptionLabel, likesCountLabel)
         mainStackView.addArrangedSubviews(imageView, labelsStackView)
         contentView.addSubviews(mainStackView)
-
+        
         setupConstraints()
     }
 }

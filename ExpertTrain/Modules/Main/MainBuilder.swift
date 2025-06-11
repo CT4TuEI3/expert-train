@@ -10,7 +10,8 @@ import UIKit
 final class MainBuilder {
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
-        let presenter = MainPresenter(view: view)
+        let photoService = PhotosService()
+        let presenter = MainPresenter(view: view, photoService: photoService)
         view.presenter = presenter
         return view
     }
