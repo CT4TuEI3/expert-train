@@ -12,6 +12,9 @@
 		327CE53B2DF8334E003261DC /* Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 327CE53A2DF8334E003261DC /* Configure.plist */; };
 		327CE53E2DF83787003261DC /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE53D2DF83787003261DC /* PhotosService.swift */; };
 		327CE5412DF83A96003261DC /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE5402DF83A96003261DC /* MainModel.swift */; };
+		3284A9072DF94F8700358A99 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284A9052DF94F8700358A99 /* DetailBuilder.swift */; };
+		3284A9082DF94F8700358A99 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284A9012DF94F8700358A99 /* DetailPresenter.swift */; };
+		3284A9092DF94F8700358A99 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284A9032DF94F8700358A99 /* DetailViewController.swift */; };
 		32D4D1B92DF7546100A8B655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4D1AE2DF7546100A8B655 /* AppDelegate.swift */; };
 		32D4D1BA2DF7546100A8B655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4D1B02DF7546100A8B655 /* SceneDelegate.swift */; };
 		32D4D1BD2DF7546100A8B655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D4D1B22DF7546100A8B655 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		327CE53A2DF8334E003261DC /* Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configure.plist; sourceTree = "<group>"; };
 		327CE53D2DF83787003261DC /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		327CE5402DF83A96003261DC /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		3284A9012DF94F8700358A99 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		3284A9032DF94F8700358A99 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3284A9052DF94F8700358A99 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		32D4D1952DF7544300A8B655 /* ExpertTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpertTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D4D1AE2DF7546100A8B655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D4D1AF2DF7546100A8B655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +77,32 @@
 				327CE5402DF83A96003261DC /* MainModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3284A9022DF94F8700358A99 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3284A9012DF94F8700358A99 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3284A9042DF94F8700358A99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3284A9032DF94F8700358A99 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3284A9062DF94F8700358A99 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3284A9052DF94F8700358A99 /* DetailBuilder.swift */,
+				3284A9022DF94F8700358A99 /* Presenter */,
+				3284A9042DF94F8700358A99 /* View */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		32D4D18C2DF7544300A8B655 = {
@@ -126,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				32D4D1C72DF7588E00A8B655 /* Main */,
+				3284A9062DF94F8700358A99 /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -260,6 +293,9 @@
 				32D4D1C92DF7588E00A8B655 /* MainPresenter.swift in Sources */,
 				32762B3C2DF8A67D00A2D60B /* UIColorExtension.swift in Sources */,
 				327CE5412DF83A96003261DC /* MainModel.swift in Sources */,
+				3284A9072DF94F8700358A99 /* DetailBuilder.swift in Sources */,
+				3284A9082DF94F8700358A99 /* DetailPresenter.swift in Sources */,
+				3284A9092DF94F8700358A99 /* DetailViewController.swift in Sources */,
 				32D4D1D82DF75ED400A8B655 /* UIViewExtension.swift in Sources */,
 				32D4D1D42DF758FE00A8B655 /* UICollectionViewExtension.swift in Sources */,
 				32D4D1CA2DF7588E00A8B655 /* MainViewController.swift in Sources */,

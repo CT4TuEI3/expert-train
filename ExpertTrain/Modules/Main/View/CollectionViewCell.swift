@@ -65,7 +65,8 @@ final class CollectionViewCell: UICollectionViewCell {
     
     // MARK: - Configure
     
-    func configure(_ photo: MainModel) {
+    func configure(_ photo: MainModel?) {
+        guard let photo else { return }
         imageView.imageFrom(urlString: photo.urls.thumb)
         descriptionLabel.text = photo.displayDescription
         descriptionLabel.textColor = UIColor(hex: photo.color)

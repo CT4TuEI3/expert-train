@@ -66,10 +66,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCellForIndexPath(indexPath) as CollectionViewCell
-        if let presenter = presenter {
-            collectionViewCell.configure(presenter.photoForCell(at: indexPath.item))
-        }
+        collectionViewCell.configure(presenter?.photoForCell(at: indexPath.item))
         return collectionViewCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailBuilder.createDetailModule(presenter?.photoForCell(at: indexPath.item))
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
