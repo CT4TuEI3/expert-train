@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320D89262DFE07C3008BA25B /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D89252DFE07C3008BA25B /* ImageProvider.swift */; };
 		32762B3A2DF8A4AF00A2D60B /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32762B392DF8A4AF00A2D60B /* UIImageViewExtensions.swift */; };
 		32762B3C2DF8A67D00A2D60B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32762B3B2DF8A67D00A2D60B /* UIColorExtension.swift */; };
 		327CE53B2DF8334E003261DC /* Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 327CE53A2DF8334E003261DC /* Configure.plist */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320D89252DFE07C3008BA25B /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		32762B392DF8A4AF00A2D60B /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		32762B3B2DF8A67D00A2D60B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		327CE53A2DF8334E003261DC /* Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configure.plist; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320D89272DFE096E008BA25B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				320D89252DFE07C3008BA25B /* ImageProvider.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		327CE53C2DF8365E003261DC /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 				32D4D1B12DF7546100A8B655 /* Core */,
 				32D4D1C02DF7547000A8B655 /* Resources */,
 				32D4D1D32DF758FE00A8B655 /* Extensions */,
+				320D89272DFE096E008BA25B /* Helpers */,
 				327CE53C2DF8365E003261DC /* Services */,
 				327CE53F2DF83A82003261DC /* Model */,
 				32D4D1C12DF7586100A8B655 /* Modules */,
@@ -292,6 +303,7 @@
 				32D4D1C82DF7588E00A8B655 /* MainBuilder.swift in Sources */,
 				32D4D1C92DF7588E00A8B655 /* MainPresenter.swift in Sources */,
 				32762B3C2DF8A67D00A2D60B /* UIColorExtension.swift in Sources */,
+				320D89262DFE07C3008BA25B /* ImageProvider.swift in Sources */,
 				327CE5412DF83A96003261DC /* MainModel.swift in Sources */,
 				3284A9072DF94F8700358A99 /* DetailBuilder.swift in Sources */,
 				3284A9082DF94F8700358A99 /* DetailPresenter.swift in Sources */,

@@ -89,7 +89,6 @@ extension MainViewController: MainViewControllerProtocol {
         DispatchQueue.main.async {
             self.loaderView.isHidden = false
             self.loaderView.startAnimating()
-            
         }
     }
     
