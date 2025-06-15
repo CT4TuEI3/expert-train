@@ -16,12 +16,7 @@ final class MainViewController: UIViewController {
     // MARK: - UI Elements
     
     private lazy var mainCollectionView: UICollectionView = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.6,
-                                 height: UIScreen.main.bounds.height * 0.3)
-        layout.sectionInset = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0)
-        
+        let layout = CollectionLayoutFactory.createLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.registerClass(CollectionViewCell.self)
         collectionView.delegate = self
@@ -45,6 +40,14 @@ final class MainViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.mainCollectionView.collectionViewLayout = CollectionLayoutFactory.createLayout()
+        })
+    }
+    
     // MARK: - Private Methods
     
     private func setupUI() {
@@ -60,17 +63,20 @@ final class MainViewController: UIViewController {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         presenter?.numberOfPhotos() ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCellForIndexPath(indexPath) as CollectionViewCell
         collectionViewCell.configure(presenter?.photoForCell(at: indexPath.item))
         return collectionViewCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailBuilder.createDetailModule(presenter?.photoForCell(at: indexPath.item))
         navigationController?.pushViewController(detailViewController, animated: true)
     }

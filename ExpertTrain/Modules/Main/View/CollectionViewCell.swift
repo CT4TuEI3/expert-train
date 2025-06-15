@@ -14,6 +14,8 @@ final class CollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        imageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         return imageView
     }()
     
@@ -44,6 +46,8 @@ final class CollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 8.0
+        stackView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        stackView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return stackView
     }()
     
